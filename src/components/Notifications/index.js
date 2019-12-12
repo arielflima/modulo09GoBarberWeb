@@ -1,6 +1,12 @@
 import React from 'react';
 import { MdNotifications } from 'react-icons/md';
-import { Container, Badge, Notification, NotificationList } from './styles';
+import {
+  Container,
+  Badge,
+  Notification,
+  Scroll,
+  NotificationList,
+} from './styles';
 
 export default function Notifications() {
   return (
@@ -10,21 +16,23 @@ export default function Notifications() {
       </Badge>
 
       <NotificationList>
-        <Notification unRead>
-          <p>Você possui um novo agendamento para amanha!</p>
-          <time>há 2 dias</time>
-          <button type="button">Marcar como lida</button>
-        </Notification>
-        <Notification>
-          <p>Você possui um novo agendamento para amanha!</p>
-          <time>há 2 dias</time>
-          <button type="button">Marcar como lida</button>
-        </Notification>
-        <Notification>
-          <p>Você possui um novo agendamento para amanha!</p>
-          <time>há 2 dias</time>
-          <button type="button">Marcar como lida</button>
-        </Notification>
+        <Scroll>
+          <Notification unRead>
+            <p>Você possui um novo agendamento para amanha!</p>
+            <time>há 2 dias</time>
+            <button type="button">Marcar como lida</button>
+          </Notification>
+          <Notification>
+            <p>Você possui um novo agendamento para amanha!</p>
+            <time>há 2 dias</time>
+            <button type="button">Marcar como lida</button>
+          </Notification>
+          <Notification>
+            <p>Você possui um novo agendamento para amanha!</p>
+            <time>há 2 dias</time>
+            <button type="button">Marcar como lida</button>
+          </Notification>
+        </Scroll>
       </NotificationList>
     </Container>
   );
