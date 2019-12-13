@@ -18,10 +18,8 @@ export default function Notifications() {
   const [notifications, setNotifications] = useState([]);
 
   const hasUnread = useMemo(
-    () =>
-      !!notifications.find(notification => notification.read === false)[
-        notifications
-      ]
+    () => !!notifications.find(notification => notification.read === false),
+    [notifications]
   );
 
   useEffect(() => {
@@ -63,12 +61,12 @@ export default function Notifications() {
         <MdNotifications color="#7159c1" size={20} />
       </Badge>
 
-      <NotificationList>
+      <NotificationList visible={visible}>
         <Scroll>
           {notifications.map(notification => (
             <Notification key={notification._id} unread={!notification.read}>
               <p>{notification.content}</p>
-              <time>notification.timeDistance</time>
+              <time>{notification.timeDistance}</time>
               {!notification.read && (
                 <button
                   type="button"

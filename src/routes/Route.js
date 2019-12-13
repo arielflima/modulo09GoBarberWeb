@@ -1,5 +1,4 @@
 import React from 'react';
-import { PersistGate } from 'redux-persist/integration/react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
